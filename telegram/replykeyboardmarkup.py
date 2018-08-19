@@ -23,21 +23,28 @@ from telegram import ReplyMarkup
 
 class ReplyKeyboardMarkup(ReplyMarkup):
     """This object represents a custom keyboard with reply options.
-
+       이 객체는 답변 옵션에 대한 커스텀 키보드를 표현합니다.
     Attributes:
         keyboard (List[List[:class:`telegram.KeyboardButton` | :obj:`str`]]): Array of button rows.
+        버튼 row 배열
         resize_keyboard (:obj:`bool`): Optional. Requests clients to resize the keyboard.
+        선택형이며, 클라이언트에게 키보드 사이즈를 조정하도록 request
         one_time_keyboard (:obj:`bool`): Optional. Requests clients to hide the keyboard as soon as
             it's been used.
+        선택형, 클라이언트에게 키보드 사용 후 바로 감추도록 request
         selective (:obj:`bool`): Optional. Show the keyboard to specific users only.
+        선택형, 특정 사용자에게만 키보드가 보이도록 함.
 
     Example:
         A user requests to change the bot's language, bot replies to the request with a keyboard
         to select the new language. Other users in the group don't see the keyboard.
+        사용자가 봇의 language를 변경하도록 요청하면 봇은 새로운 language를 선택하기 위해 키보드로 request에 대한 답변을 한다.
+        해당 그룹의 다른 사용자들은 이 키보드를 볼 수 없다.
 
     Args:
         keyboard (List[List[:obj:`str` | :class:`telegram.KeyboardButton`]]): Array of button rows,
                 each represented by an Array of :class:`telegram.KeyboardButton` objects.
+                버튼 row 배열, 각 항목은 :class:`telegram.KeyboardButton 객체의 배열에 따라 표현이 된다.
         resize_keyboard (:obj:`bool`, optional): Requests clients to resize the keyboard vertically
             for optimal fit (e.g., make the keyboard smaller if there are just two rows of
             buttons). Defaults to false, in which case the custom keyboard is always of the same
